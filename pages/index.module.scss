@@ -1,0 +1,186 @@
+// index.module.scss
+
+.container {
+  width: 440px;
+  height: 320px;
+  background-color: #ffffff; /* Fondo blanco */
+  border: 1px solid #999999; /* Borde gris */
+  border-radius: 15%; /* Esquinas redondeadas */
+  display: flex;
+  flex-direction: column; /* Colocar las preguntas en una columna */
+  justify-content: space-between; /* Espacio entre las preguntas */
+  align-items: center;
+  margin: 0 auto; /* Centrar el cuadro horizontalmente */
+  margin-top: 50px; /* Agregar margen superior para centrarlo verticalmente */
+  font-size: 1.2rem; /* Tamaño del texto ajustado */
+  overflow: hidden; /* Ocultar el contenido que se desborde del contenedor */
+  position: relative; /* Añadir posición relativa para la animación */
+  padding-top: 3%;
+}
+
+.questionContainerOne {
+  position: absolute; /* Posición absoluta para la animación */
+  left: 50%; /* Centrar horizontalmente */
+  
+  transform: translateX(-50%); /* Centrar horizontalmente con respecto al cuadro */
+  color: grey; /* Texto gris */
+  width: 65%; /* Abarcar el 70% del ancho del cuadro */
+  text-align: center; /* Centrar el texto horizontalmente */
+  margin-bottom: 2%;
+  font-size: 1.1rem; /* Tamaño de fuente más grande */
+  font-weight: 600;
+  opacity: 0; /* Inicialmente ocultar la pregunta */
+}
+
+.questionContainer {
+  position: absolute; /* Posición absoluta para la animación */
+  left: 50%; /* Centrar horizontalmente */
+  transform: translateX(-50%); /* Centrar horizontalmente con respecto al cuadro */
+  color: #8a2be2; /* Texto violeta */
+  width: 85%; /* Abarcar el 90% del ancho del cuadro */
+  text-align: left; /* Centrar el texto horizontalmente */
+  font-size: 1rem; /* Tamaño de fuente más pequeño */
+  font-weight: 500;
+  opacity: 0; /* Inicialmente ocultar la pregunta */
+  border: 0px solid #999999; /* Borde gris */
+  border-radius: 50px; /* Esquinas redondeadas */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25); /* Sombreado en la parte inferior */
+  padding: 13px; /* Aumentar el padding alrededor del texto */
+}
+
+/* Estilos específicos para la pregunta 4 */
+.questionContainer4 {
+  display: flex;
+  align-items: center;
+// Agregamos display flex y ajustamos los márgenes para centrar la pregunta 4 y su radio button
+.questionContainer4 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+}
+}
+
+.radioButtonContainer {
+  position:relative;
+  margin-right: 1%;
+  margin-left: 1.2%;
+  width: 17px;
+  height: 17px;
+  border: 1px solid gray;
+  border-radius: 50%;
+  
+}
+
+/* Ajuste del margen derecho en el texto de la pregunta 4 */
+.radioButtonLabel {
+  margin-right: 5px; /* Ajustar el margen derecho del texto */
+}
+
+/* Estilos para ajustar la alineación del radio button y el texto en la pregunta 4 */
+.radioButton {
+  /* Eliminar el margen derecho en el radio button */
+  margin-right: 1;
+}
+
+/* Estilos específicos para el radio button de la pregunta 4 cuando está "seleccionado" */
+.radioButton4Selected {
+  background-color: #8a2be2;
+  border-color: #8a2be2;
+  margin-right: 1;
+}
+
+/* Estilos para las animaciones de las preguntas */
+.radioButtonWrapper {
+  animation: highlightRadio 0.5s ease-in-out forwards;
+  animation-delay: 12s; /* Inicia la animación después de 12 segundos (tiempo de la cuarta pregunta) */
+}
+
+.questionContainerOne:nth-child(1) {
+  bottom: 0; /* Primera pregunta al 0% del bottom */
+  animation: slideUp 1s linear forwards; /* Duración de la animación: 1 segundo */
+  animation-delay: 0s;
+}
+
+.questionContainer:nth-child(2) {
+  bottom: 68%; /* Segunda pregunta al 68% del bottom */
+  animation: slideUp2 1s linear forwards; /* Duración de la animación: 1 segundo */
+  animation-delay: 2.5s;
+}
+
+.questionContainer:nth-child(3) {
+  bottom: 30%; /* Tercera pregunta al 30% del bottom */
+  animation: slideUp3 1s linear forwards; /* Duración de la animación: 1 segundo */
+  animation-delay: 3.5s;
+}
+
+.questionContainer:nth-child(4) {
+  bottom: 10%; /* Cuarta pregunta al 10% del bottom */
+  animation: slideUp4 1s linear forwards; /* Duración de la animación: 1 segundo */
+  animation-delay: 4.5s;
+}
+
+@keyframes slideUp {
+  0% {
+    bottom: 0; /* Iniciar la animación desde abajo del cuadro */
+    opacity: 1; /* Hacer visible la pregunta al inicio de la animación */
+  }
+  100% {
+    bottom: 81%; /* Finalizar la animación a 83% del tamaño del cuadro */
+    opacity: 1; /* Mantener la pregunta visible al final de la animación */
+  }
+}
+
+@keyframes slideUp2 {
+  0% {
+    bottom: 0; /* Iniciar la animación desde abajo del cuadro */
+    opacity: 1; /* Hacer visible la pregunta al inicio de la animación */
+  }
+  100% {
+    bottom: 60%; /* Finalizar la animación a 50% del tamaño del cuadro */
+    opacity: 1; /* Mantener la pregunta visible al final de la animación */
+  }
+}
+
+@keyframes slideUp3 {
+  0% {
+    bottom: 0;
+    opacity: 1;
+  }
+  100% {
+    bottom: 40%;
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp4 {
+  0% {
+    bottom: 0;
+    opacity: 1;
+  }
+  100% {
+    bottom: 20%; /* Finalizar la animación a 20% del tamaño del cuadro */
+    opacity: 1; /* Mantener la pregunta visible al final de la animación */
+  }
+}
+
+@keyframes markAsSelected {
+  0% {
+    background-color: transparent;
+    border: 2px solid #8a2be2;
+  }
+  100% {
+    background-color: #8a2be2;
+    border: 2px solid #8a2be2;
+  }
+}
+
+.radioButton {
+  position: relative;
+  padding-right: 15px;
+  width: 17px;
+  height: 17px;
+  border: 1px solid gray;
+  border-radius: 50%;
+ 
+}
